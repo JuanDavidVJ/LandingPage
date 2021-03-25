@@ -1,0 +1,65 @@
+﻿</p>@model IEnumerable<Landing_Page.Models.usuario>
+
+@{
+    ViewBag.Title = "BuscarTodos";
+    Layout = "~/Views/Shared/_Principal.cshtml";
+}
+
+<h2>Lista de Visitas</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create")
+</p>
+<div class="container">
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.ciudad)
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ciudad)
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { celular = item.celular }) |
+                    @Html.ActionLink("Detalles", "Details", new { celular = item.celular }) |
+                    @Html.ActionLink("Borrar", "Delete", new { celular = item.celular })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

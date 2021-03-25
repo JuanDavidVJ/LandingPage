@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+        <li>@Html.ActionLink("Registrar Visita", "Create")</li>
+        <li>@Html.ActionLink("Ver Visitas", "BuscarTodos")</li>
+
+    </ul>
+
+    <hr />
+    @RenderBody()
+    <hr />
+
+
+
+</body>
+</html>
