@@ -49,7 +49,7 @@ namespace Landing_Page.Models
             Conectar();
             List<usuario> usuario = new List<usuario>();
 
-            SqlCommand com = new SqlCommand("select nombre, celular, email, ciudad from formulario", con);
+            SqlCommand com = new SqlCommand("select id, nombre, celular, email, ciudad from formulario", con);
             con.Open();
             SqlDataReader registros = com.ExecuteReader();
 
@@ -59,7 +59,7 @@ namespace Landing_Page.Models
 
                 usuario usu = new usuario
                 {
-
+                    ID = Convert.ToInt32(registros["id"]),
                     nombre = registros["nombre"].ToString(),
                     celular = registros["celular"].ToString(),
                     email = registros["email"].ToString(),
@@ -77,12 +77,12 @@ namespace Landing_Page.Models
 
 
 
-        public usuario Recuperar(string celular)
+        public usuario Recuperar(int id)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("select nombre, celular, email, ciudad  from formulario where celular = @celular", con);
-            comando.Parameters.Add("@celular", SqlDbType.Int);
-            comando.Parameters["@celular"].Value = celular;
+            SqlCommand comando = new SqlCommand("select id, nombre, celular, email, ciudad  from formulario where id = @id", con);
+            comando.Parameters.Add("@id", SqlDbType.Int);
+            comando.Parameters["@id"].Value = id;
             con.Open();
 
             SqlDataReader registros = comando.ExecuteReader();
@@ -90,6 +90,7 @@ namespace Landing_Page.Models
 
             if (registros.Read())
             {
+                usuario.ID = Convert.ToInt32(registros["id"]);
                 usuario.nombre = registros["nombre"].ToString();
                 usuario.celular = registros["celular"].ToString();
                 usuario.email = registros["email"].ToString();
@@ -104,7 +105,10 @@ namespace Landing_Page.Models
         public int Modificar(usuario usu)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("update formulario set nombre=@nombre, celular=@celular, email=@email, ciudad=@ciudad, edad=@edad  where nombre=@nombre", con);
+            SqlCommand comando = new SqlCommand("update formulario set nombre=@nombre, celular=@celular, email=@email, ciudad=@ciudad, edad=@edad  where id=@id", con);
+
+            comando.Parameters.Add("@id", SqlDbType.Int);
+            comando.Parameters["@id"].Value = usu.ID;
 
             comando.Parameters.Add("@nombre", SqlDbType.VarChar);
             comando.Parameters["@nombre"].Value = usu.nombre;
@@ -129,12 +133,12 @@ namespace Landing_Page.Models
             return i;
         }
 
-        public int Borrar(string celular)
+        public int Borrar(int id)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("delete from formulario where nombre=@nombre", con);
-            comando.Parameters.Add("@nombre", SqlDbType.Int);
-            comando.Parameters["@nombre"].Value = celular;
+            SqlCommand comando = new SqlCommand("delete from formulario where id=@id", con);
+            comando.Parameters.Add("@id", SqlDbType.Int);
+            comando.Parameters["@id"].Value = id;
 
             con.Open();
             int i = comando.ExecuteNonQuery();

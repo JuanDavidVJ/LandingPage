@@ -14,37 +14,38 @@ namespace Landing_Page.Controllers
         {
             return View();
         }
+
         // GET: Home/Details/5
-        public ActionResult Details(string celular)
-        {
-            mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(celular);
-            return View(usu);
-        }
-
-        // GET: Home/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Home/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Index(FormCollection collection)
         {
             mantenimientousuario ma = new mantenimientousuario();
             usuario usu = new usuario
             {
+                
                 nombre = collection["nombre"].ToString(),
                 celular = collection["celular"].ToString(),
                 email = collection["email"].ToString(),
                 ciudad = collection["ciudad"].ToString(),
-
-
             };
+            if (ModelState.IsValid)
+                return View("Thanks");
+            else
+                return View("Index");
+
             ma.Alta(usu);
-            return RedirectToAction("Index");
+            return RedirectToAction("Cualquiera");
         }
+        public ActionResult Details(int id)
+        {
+            mantenimientousuario ma = new mantenimientousuario();
+            usuario usu = ma.Recuperar(id);
+            return View(usu);
+        }
+
+        
+     
 
         public ActionResult BuscarTodos()
         {
@@ -53,20 +54,21 @@ namespace Landing_Page.Controllers
         }
 
         // GET: Home/Edit/5
-        public ActionResult Edit(string celular)
+        public ActionResult Edit(int id)
         {
             mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(celular);
+            usuario usu = ma.Recuperar(id);
             return View(usu);
         }
 
         // POST: Home/Edit/5
         [HttpPost]
-        public ActionResult Edit(string celular, FormCollection collection)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             mantenimientousuario ma = new mantenimientousuario();
             usuario usu = new usuario
             {
+                ID = id,
                 nombre = collection["nombre"].ToString(),
                 celular = collection["celular"].ToString(),
                 email = collection["email"].ToString(),
@@ -79,20 +81,25 @@ namespace Landing_Page.Controllers
         }
 
         // GET: Home/Delete/5
-        public ActionResult Delete(string celular)
+        public ActionResult Delete(int id)
         {
             mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(celular);
+            usuario usu = ma.Recuperar(id);
             return View(usu);
         }
 
         // POST: Home/Delete/5
         [HttpPost]
-        public ActionResult Delete(string celular, FormCollection collection)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             mantenimientousuario ma = new mantenimientousuario();
-            ma.Borrar(celular);
+            ma.Borrar(id);
             return RedirectToAction("Index");
+        }
+        public ActionResult Cualquiera()
+        {
+            mantenimientousuario us = new mantenimientousuario();
+            return View(us.RecuperarTodos());
         }
     }
 }

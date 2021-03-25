@@ -8,6 +8,8 @@ namespace Landing_Page.Models
 {
     public class usuario
     {
+        public int ID { get; set; }
+
         public string nombre { get; set; }
 
         public string celular { get; set; }
