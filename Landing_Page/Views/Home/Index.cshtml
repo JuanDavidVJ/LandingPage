@@ -1,51 +1,138 @@
 ﻿@model Landing_Page.Models.usuario
+
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Principal.cshtml";
 }
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal text text-center">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group ">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" }) 
-            </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <div class="form-horizontal">
+        <h1 id="bien" style="font-size:3em">EL FUTURO ES AHORA</h1>
+        <div style="background-image: url(https://yoguidrogui.com/wp-content/uploads/2020/11/mejores-perifericos-gamer-baratos-imprescindibles-para-tu-pc.jpg);width:960px;height:300px;">
+            <h1 style="color:#FB5859;padding:100px;margin-left:160px;font-size:3.5em">💀GAMESHOP👾</h1>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.celular, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.celular, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.celular, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <div id="nav">
+            <ul>
+                <li><h1><a href="#">Periféricos Gamer</a></h1></li>
+                <li><h1><a href="#">Servicios Técnicos</a></h1></li>
+                <li><h1><a href="#">VideoJuegos en Venta</a></h1></li>
+                <li><h1><a href="#">Consolas y PC</a></h1></li>
+                <li><h1>@Html.ActionLink("Visualizar Mensajes", "Cualquiera")</h1></li>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ciudad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ciudad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ciudad, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            </ul>
+
+
+
+
         </div>
-    </div>}
+        <section class="bg-light text-center" style="background:#FB5859;width:1100px">
+
+            <div class="container" style="padding:2px;">
+                <div class="row">
+                    <div class="m-5">
+                        <h1 style="color:#FB5859;text-align:center;margin-top:20px">¿QUE ES GAMESHOP?</h1>
+                        <img src="https://storage-asset.msi.com/event/trueGaminglanding/images/msi_pd.png" style="width:900px;height:400px;padding:20px" />
+                        <h2 style="color:#b200ff;text-align:center">
+                            GAMESHOP es una tienda especializada en el mundo de los videojuegos, aquí podrás encontrar todo lo que necesites para armar tu SETUP GAMER 
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <table style="margin-top:25px">
+            <tr>
+                <td>
+                    <div style="background:#FE0041 ;">
+                        <img src="https://fanaticosdelhardware.com/wp-content/uploads/2020/12/unnamed5-1000x640.jpg" style="width:400px; height:300px;border-radius:20px" />
+                    </div>
+
+                </td>
+                <td>
+                    <div style="background:#FE0041 ;">
+                        <img src="https://http2.mlstatic.com/pc-gamer-master-race-amd-ryzen-3-2200-con-kit-de-perifericos-D_NQ_NP_760505-MLM28192718358_092018-F.jpg" style="width:400px; height:300px;border-radius:20px " />
+                    </div>
+                </td>
+                <td>
+                    <div style="background:#FE0041 ;">
+                        <img src="https://i.blogs.es/57d5f0/ps5-precios-dualsense-accesorios-mexico/840_560.jpg" style="width:400px; height:300px;border-radius:20px" />
+                    </div>
+                </td>
+                <td>
+                    <div style="background:#FE0041;">
+
+                        <img src="https://ep01.epimg.net/tecnologia/imagenes/2019/12/13/actualidad/1576240866_865942_1576241031_noticia_normal.jpg" style="width:400px; height:300px;border-radius:20px" />
+                    </div>
+                </td>
+
+            </tr>
+        
+
+
+
+        </table>
+
+        <section class="page-section" id="contact">
+            <img src="https://i.pinimg.com/originals/82/ce/ed/82ceede6cd7f360ab893e0beed78cab4.png" style="width:400px; height:300px;" />
+            <img src="https://leagueof.hexania.com/assets/images/blog/uploads/thumnails/2018-11/setup-gamer-5bdc7e0a1c6b0.jpg" style="width:400px; height:300px;" />
+            <div class="container">
+                    
+                <div style="background:white;opacity:0.8;padding:15px;width:400px">
+
+
+                    <h3 style="text-align:center">REGISTRATE PARA SABER MAS DE NOSOSTROS</h3>
+
+                   
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Celular, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Ciudad, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Ciudad, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Ciudad, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+          
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Enviar" class="btn btn-success" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+
+}

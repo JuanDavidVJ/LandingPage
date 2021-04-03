@@ -8,19 +8,31 @@ namespace Landing_Page.Models
 {
     public class usuario
     {
-        public int ID { get; set; }
 
-        public string nombre { get; set; }
+        public int Id { get; set; }
 
-        public string celular { get; set; }
+        [Required(ErrorMessage = "EL nombre es obligatorio")]
+        [MinLength(10, ErrorMessage = "EL nombre de usuario debe tener al menos 10 caracteres")]
+        public string Nombre { get; set; }
+       
 
+        [Required(ErrorMessage = "Es obligatorio el Email")]
+        [EmailAddress(ErrorMessage = "Debe ingresar un Email valido")]
 
-        [EmailAddress(ErrorMessage = "Debe ingresar un email valido")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        public string ciudad { get; set; }
+        
+        public string Celular { get; set; }
+
+        [Required(ErrorMessage = "Es obligatoria la Ciudad")]
+        public string Ciudad { get; set; }
 
       
 
+
+
+
     }
 }
+
+  

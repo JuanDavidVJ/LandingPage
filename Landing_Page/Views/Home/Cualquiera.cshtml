@@ -1,52 +1,50 @@
 ﻿@model IEnumerable<Landing_Page.Models.usuario>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Principal.cshtml";
+    ViewBag.Title = "visualizar";
 }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<h2>Index</h2>
+<h2 style="color:white">Lista de Usuarios Registrados</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table table-success table-striped">
+
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.celular)
+            @Html.DisplayNameFor(model => model.Celular)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            @Html.DisplayNameFor(model => model.Ciudad)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ciudad)
-        </th>
-        <th></th>
+        
+
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nombre)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.celular)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.email)
+                @Html.DisplayFor(modelItem => item.Celular)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ciudad)
+                @Html.DisplayFor(modelItem => item.Ciudad)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
+            
+
+
         </tr>
     }
 

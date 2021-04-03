@@ -1,0 +1,82 @@
+﻿body {
+    background-image: url(https://image.freepik.com/vector-gratis/fondo-patron-huesos-huellas_1374-18.jpg);
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#nav {
+    background: #2ECC71;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 16px auto;
+}
+
+    #nav ul {
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #nav a {
+        color: #FFFFFF;
+        font-weight: bold;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.8em;
+    }
+
+        #nav a:hover {
+            background: #AED6F1;
+            text-decoration: underline;
+        }
+
+#bien {
+    background: #2ECC71;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 16px auto;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.main-header {
+    background: url(imagenes/background.jpg);
+    background-size: cover;
+    min-height: 500px;
+}
+
+.background-overlay {
+    background: rgba(95, 39, 205,0.7)
+}
+
+.form-control, .btn {
+    border-radius: 0;
+}
+
+.team, footer {
+    background: #8E44ad;
+}
+
+#footer {
+    color: black;
+    background-image: url(imagenes/huella.jpg);
+    text-align: center;
+}
+
+    #footer mark {
+        background: #FFFFFF;
+    }

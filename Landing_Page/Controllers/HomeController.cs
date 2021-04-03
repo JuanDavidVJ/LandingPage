@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Landing_Page.Controllers
 {
+
     public class HomeController : Controller
     {
         // GET: Home
@@ -14,92 +15,91 @@ namespace Landing_Page.Controllers
         {
             return View();
         }
-
-        // GET: Home/Details/5
-        // POST: Home/Create
         [HttpPost]
         public ActionResult Index(FormCollection collection)
         {
             mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = new usuario
+            usuario cont = new usuario
             {
-                
-                nombre = collection["nombre"].ToString(),
-                celular = collection["celular"].ToString(),
-                email = collection["email"].ToString(),
-                ciudad = collection["ciudad"].ToString(),
-            };
-            if (ModelState.IsValid)
-                return View("Thanks");
-            else
-                return View("Index");
 
-            ma.Alta(usu);
-            return RedirectToAction("Cualquiera");
+                Nombre = collection["nombre"],
+                Email = collection["email"],
+                Celular = collection["celular"],
+                Ciudad = collection["ciudad"],
+              
+
+            };
+            ma.Alta(cont);
+            return RedirectToAction("Confirmacion");
         }
+        public ActionResult Confirmacion()
+        {
+            return View();
+        }
+
+        // GET: Home/Details/5
         public ActionResult Details(int id)
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(id);
-            return View(usu);
+            return View();
         }
 
-        
-     
-
-        public ActionResult BuscarTodos()
+        // GET: Home/Create
+        public ActionResult Create()
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            return View(ma.RecuperarTodos());
+            return View();
         }
+
+        // POST: Home/Create
+
 
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(id);
-            return View(usu);
+            return View();
         }
 
         // POST: Home/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = new usuario
+            try
             {
-                ID = id,
-                nombre = collection["nombre"].ToString(),
-                celular = collection["celular"].ToString(),
-                email = collection["email"].ToString(),
-                ciudad = collection["ciudad"].ToString(),
+                // TODO: Add update logic here
 
-
-            };
-            ma.Modificar(usu);
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Home/Delete/5
         public ActionResult Delete(int id)
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            usuario usu = ma.Recuperar(id);
-            return View(usu);
+            return View();
         }
 
         // POST: Home/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            mantenimientousuario ma = new mantenimientousuario();
-            ma.Borrar(id);
-            return RedirectToAction("Index");
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
-        public ActionResult Cualquiera()
+        public ActionResult visualizar()
         {
-            mantenimientousuario us = new mantenimientousuario();
-            return View(us.RecuperarTodos());
+            mantenimientousuario ma = new mantenimientousuario();
+            return View(ma.RecuperarTodos());
+
         }
     }
 }

@@ -30,10 +30,10 @@ namespace Landing_Page.Models
             comando.Parameters.Add("@ciudad", SqlDbType.VarChar);
 
 
-            comando.Parameters["@nombre"].Value = usu.nombre;
-            comando.Parameters["@celular"].Value = usu.celular;
-            comando.Parameters["@email"].Value = usu.email;
-            comando.Parameters["@ciudad"].Value = usu.ciudad;
+            comando.Parameters["@nombre"].Value = usu.Nombre;
+            comando.Parameters["@celular"].Value = usu.Celular;
+            comando.Parameters["@email"].Value = usu.Email;
+            comando.Parameters["@ciudad"].Value = usu.Ciudad;
 
 
 
@@ -59,11 +59,11 @@ namespace Landing_Page.Models
 
                 usuario usu = new usuario
                 {
-                    ID = Convert.ToInt32(registros["id"]),
-                    nombre = registros["nombre"].ToString(),
-                    celular = registros["celular"].ToString(),
-                    email = registros["email"].ToString(),
-                    ciudad = registros["ciudad"].ToString(),
+                    Id = Convert.ToInt32(registros["id"]),
+                    Nombre = registros["nombre"].ToString(),
+                    Celular = registros["celular"].ToString(),
+                    Email = registros["email"].ToString(),
+                    Ciudad = registros["ciudad"].ToString(),
 
 
                 };
@@ -90,11 +90,11 @@ namespace Landing_Page.Models
 
             if (registros.Read())
             {
-                usuario.ID = Convert.ToInt32(registros["id"]);
-                usuario.nombre = registros["nombre"].ToString();
-                usuario.celular = registros["celular"].ToString();
-                usuario.email = registros["email"].ToString();
-                usuario.ciudad = registros["ciudad"].ToString();
+                usuario.Id = Convert.ToInt32(registros["id"]);
+                usuario.Nombre = registros["nombre"].ToString();
+                usuario.Celular = registros["celular"].ToString();
+                usuario.Email = registros["email"].ToString();
+                usuario.Ciudad = registros["ciudad"].ToString();
 
 
             }
@@ -108,19 +108,19 @@ namespace Landing_Page.Models
             SqlCommand comando = new SqlCommand("update formulario set nombre=@nombre, celular=@celular, email=@email, ciudad=@ciudad, edad=@edad  where id=@id", con);
 
             comando.Parameters.Add("@id", SqlDbType.Int);
-            comando.Parameters["@id"].Value = usu.ID;
+            comando.Parameters["@id"].Value = usu.Id;
 
             comando.Parameters.Add("@nombre", SqlDbType.VarChar);
-            comando.Parameters["@nombre"].Value = usu.nombre;
+            comando.Parameters["@nombre"].Value = usu.Nombre;
 
             comando.Parameters.Add("@celular", SqlDbType.VarChar);
-            comando.Parameters["@celular"].Value = usu.celular;
+            comando.Parameters["@celular"].Value = usu.Celular;
 
             comando.Parameters.Add("@email", SqlDbType.VarChar);
-            comando.Parameters["@email"].Value = usu.email;
+            comando.Parameters["@email"].Value = usu.Email;
 
             comando.Parameters.Add("@ciudad", SqlDbType.VarChar);
-            comando.Parameters["@ciudad"].Value = usu.ciudad;
+            comando.Parameters["@ciudad"].Value = usu.Ciudad;
 
 
 
