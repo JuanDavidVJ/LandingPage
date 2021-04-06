@@ -95,7 +95,7 @@ namespace Landing_Page.Controllers
                 return View();
             }
         }
-        public ActionResult visualizar()
+        public ActionResult Registro()
         {
             mantenimientousuario ma = new mantenimientousuario();
             return View(ma.RecuperarTodos());

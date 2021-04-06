@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<Landing_Page.Models.usuario>
 
 @{
-    ViewBag.Title = "Cualquiera";
+    Layout = null;
 }
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<h2 style="color:white">Lista de Usuarios Registrados</h2>
+<h2 style="color:white">Registro</h2>
 
 <table class="table table-success table-striped">
 
@@ -33,6 +34,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
@@ -42,7 +44,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Ciudad)
             </td>
-            
+           
 
 
         </tr>

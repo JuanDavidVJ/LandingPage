@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Views\CSS\Style.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,7 @@
     <Content Include="Views\Shared\_Principal.cshtml" />
     <Content Include="Views\Home\Confirmacion.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Cualquiera.cshtml" />
+    <Content Include="Views\Home\Registro.cshtml" />
     <Content Include="Views\Shared\_Desing.cshtml" />
     <Content Include="Views\Shared\_ViewStar.cshtml" />
     <None Include="Web.Debug.config">
