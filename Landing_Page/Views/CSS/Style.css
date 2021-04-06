@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url(https://image.freepik.com/vector-gratis/fondo-patron-huesos-huellas_1374-18.jpg);
+    background : #ff0000;
     padding-bottom: 20px;
 }
 
@@ -54,7 +54,6 @@ textarea {
 }
 
 .main-header {
-    background: url(imagenes/background.jpg);
     background-size: cover;
     min-height: 500px;
 }
@@ -73,7 +72,6 @@ textarea {
 
 #footer {
     color: black;
-    background-image: url(imagenes/huella.jpg);
     text-align: center;
 }
 
